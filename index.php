@@ -1,16 +1,12 @@
 <?php
-    $url = "http://www.omdbapi.com/?t=fast&apikey=166c0fc3";
+    $url = "http://www.omdbapi.com/?s=fast&apikey=166c0fc3";
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $Result = json_decode(curl_exec($ch));
-
-    //  var_dump($result);
-
     foreach($Result->Search as $Filmes) {
-        //  var_dump($filmes);
-
         echo "filme: " . $Filmes->Title . "</br>";
+        echo "filme: " . $Filmes->Poster . "</br>";
     };
     ?>
 
@@ -290,7 +286,7 @@
             <div class="post-card podcast-card">
               <div class="div-block div-podcast">
                 <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="images/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image image-podcast"></div>
+                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
                 </a>
               </div>
               <div>
@@ -305,12 +301,12 @@
             <div class="post-card podcast-card">
               <div class="div-block div-podcast">
                 <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="images/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image image-podcast"></div>
+                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
                 </a>
               </div>
               <div>
                 <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small">teste 2</h5>
+                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
                 </a>
                 <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
               </div>
@@ -320,12 +316,12 @@
             <div class="post-card podcast-card">
               <div class="div-block div-podcast">
                 <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="images/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image image-podcast"></div>
+                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
                 </a>
               </div>
               <div>
                 <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small">CADERNO DE QUESTÕES</h5>
+                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
                 </a>
                 <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
               </div>
@@ -335,12 +331,12 @@
             <div class="post-card podcast-card">
               <div class="div-block div-podcast">
                 <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="images/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image image-podcast"></div>
+                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
                 </a>
               </div>
               <div>
                 <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small">CADERNO DE QUESTÕES</h5>
+                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
                 </a>
                 <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
               </div>
@@ -350,12 +346,12 @@
             <div class="post-card podcast-card">
               <div class="div-block div-podcast">
                 <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="images/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image image-podcast"></div>
+                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
                 </a>
               </div>
               <div>
                 <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small">CADERNO DE QUESTÕES</h5>
+                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
                 </a>
                 <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
               </div>
@@ -365,12 +361,12 @@
             <div class="post-card podcast-card">
               <div class="div-block div-podcast">
                 <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="images/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image image-podcast"></div>
+                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
                 </a>
               </div>
               <div>
                 <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small">CADERNO DE QUESTÕES</h5>
+                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
                 </a>
                 <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
               </div>
