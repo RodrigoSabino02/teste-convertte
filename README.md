@@ -10,4 +10,6 @@ pegar o id do filme e consultar dps a api com o id para pegar a bio do filme e c
 
 # Dificuldade 
 A documentaçao da api n e bem clara, principalmente por n conseguir consultar a bio do filme com a pesquisa e muitos dos dados do filme so retornam com uma consulta exata
+
+
 nao consegui colocar o tema no wordpress, o erro dava pra faltava uma folha de estilo style.css, entao eu fiz tudo pelo codigo no localhost
