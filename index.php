@@ -4,10 +4,7 @@
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $Result = json_decode(curl_exec($ch));
-    foreach($Result->Search as $Filmes) {
-        echo "filme: " . $Filmes->Title . "</br>";
-        echo "filme: " . $Filmes->Poster . "</br>";
-    };
+
     ?>
 
 <!DOCTYPE html><!--  Last Published: Thu Dec 03 2020 14:57:07 GMT+0000 (Coordinated Universal Time)  -->
@@ -282,95 +279,23 @@
       </div>
       <div data-animation="slide" data-duration="600" data-infinite="1" class="slider-v3 slider-v4 w-slider">
         <div class="w-slider-mask">
+        <?php foreach($Result->Search as $Filme): ?>
           <div class="slide-v3 slide-v5 w-slide">
             <div class="post-card podcast-card">
-              <div class="div-block div-podcast">
-                <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
-                </a>
+                <div class="div-block div-podcast">
+                    <a href="#" class="thumbnail-small w-inline-block">
+                        <div class="thumbnail"><img src="<?= $Filme->Poster ?>" loading="lazy" alt="" class="image image-podcast"></div>
+                    </a>
+                </div>
+                <div>
+                      <a href="#" class="post-heading-link w-inline-block">
+                          <h5 class="post-heading-small"><?= $Filme->Title ?></h5>
+                      </a>
+                      <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
+                  </div>
               </div>
-              <div>
-                <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
-                </a>
-                <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
-              </div>
-            </div>
           </div>
-          <div class="slide-v3 slide-v5 w-slide">
-            <div class="post-card podcast-card">
-              <div class="div-block div-podcast">
-                <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
-                </a>
-              </div>
-              <div>
-                <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
-                </a>
-                <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
-              </div>
-            </div>
-          </div>
-          <div class="slide-v3 slide-v5 w-slide">
-            <div class="post-card podcast-card">
-              <div class="div-block div-podcast">
-                <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
-                </a>
-              </div>
-              <div>
-                <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
-                </a>
-                <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
-              </div>
-            </div>
-          </div>
-          <div class="slide-v3 slide-v5 w-slide">
-            <div class="post-card podcast-card">
-              <div class="div-block div-podcast">
-                <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
-                </a>
-              </div>
-              <div>
-                <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
-                </a>
-                <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
-              </div>
-            </div>
-          </div>
-          <div class="slide-v3 slide-v5 w-slide">
-            <div class="post-card podcast-card">
-              <div class="div-block div-podcast">
-                <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
-                </a>
-              </div>
-              <div>
-                <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
-                </a>
-                <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
-              </div>
-            </div>
-          </div>
-          <div class="slide-v3 slide-v5 w-slide">
-            <div class="post-card podcast-card">
-              <div class="div-block div-podcast">
-                <a href="#" class="thumbnail-small w-inline-block">
-                  <div class="thumbnail"><img src="<?=$Filmes->Poster?>" loading="lazy" alt="" class="image image-podcast"></div>
-                </a>
-              </div>
-              <div>
-                <a href="#" class="post-heading-link w-inline-block">
-                  <h5 class="post-heading-small"><?=$Filmes->Title?></h5>
-                </a>
-                <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
-              </div>
-            </div>
+      <?php endforeach; ?>
           </div>
         </div>
         <div class="slider-v3-arrow left w-slider-arrow-left"><img src="https://uploads-ssl.webflow.com/5fa443314944220d73966316/5fa443310cae073ffd288d8a_left.svg" alt="" class="slider-v5-arrow-icon"></div>
