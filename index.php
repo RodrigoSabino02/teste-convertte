@@ -5,6 +5,21 @@
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $Result = json_decode(curl_exec($ch));
 
+    foreach($Result->Search as $ID) {
+      $id = $ID->imdbID;
+
+
+  };
+
+  $url2 = "http://www.omdbapi.com/?i=".$id."&apikey=166c0fc3";
+  $bio = curl_init($url2);
+  curl_setopt($bio, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($bio, CURLOPT_SSL_VERIFYPEER, false);
+  $Consult = json_decode(curl_exec($bio));
+
+  $Bio = $Consult->Plot;
+    // var_dump($Bio);
+
     ?>
 
 <!DOCTYPE html><!--  Last Published: Thu Dec 03 2020 14:57:07 GMT+0000 (Coordinated Universal Time)  -->
@@ -279,7 +294,8 @@
       </div>
       <div data-animation="slide" data-duration="600" data-infinite="1" class="slider-v3 slider-v4 w-slider">
         <div class="w-slider-mask">
-        <?php foreach($Result->Search as $Filme): ?>
+        <?php foreach($Result->Search as $Filme):?>
+          
           <div class="slide-v3 slide-v5 w-slide">
             <div class="post-card podcast-card">
                 <div class="div-block div-podcast">
@@ -291,10 +307,11 @@
                       <a href="#" class="post-heading-link w-inline-block">
                           <h5 class="post-heading-small"><?= $Filme->Title ?></h5>
                       </a>
-                      <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…</p>
+                      <p class="paragraph"><?=$Bio?></p>
                   </div>
               </div>
           </div>
+          
       <?php endforeach; ?>
           </div>
         </div>
