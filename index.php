@@ -18,7 +18,7 @@
   $Consult = json_decode(curl_exec($bio));
 
   $Bio = $Consult->Plot;
-    // var_dump($Bio);
+
 
     ?>
 
@@ -293,10 +293,13 @@
         <div class="header-line"></div>
       </div>
       <div data-animation="slide" data-duration="600" data-infinite="1" class="slider-v3 slider-v4 w-slider">
-        <div class="w-slider-mask">
-        <?php foreach($Result->Search as $Filme):?>
+      
+      <div class="w-slider-mask">  
+      <?php foreach($Result->Search as $Filme):?>
           
           <div class="slide-v3 slide-v5 w-slide">
+            
+            
             <div class="post-card podcast-card">
                 <div class="div-block div-podcast">
                     <a href="#" class="thumbnail-small w-inline-block">
@@ -307,7 +310,9 @@
                       <a href="#" class="post-heading-link w-inline-block">
                           <h5 class="post-heading-small"><?= $Filme->Title ?></h5>
                       </a>
+
                       <p class="paragraph"><?=$Bio?></p>
+                      
                   </div>
               </div>
           </div>
